@@ -10,6 +10,15 @@ import sys
 import threading
 import time
 
+if sys.argv[1] == "-h":
+    print("+| USAGE: python3 carambola.py")
+    sys.exit(0)
+elif sys.argv[1] == "-easter":
+    print("Hello Fsociety!")
+    sys.exit(0)
+else:
+    pass
+
 print('\033[1m' + '\033[33m' + """
                            _hackerama_  '||            '||`         
                                          ||             ||          
@@ -39,14 +48,6 @@ def scan(porta):
         print("+| Porta {}:                         	                    Aberta".format(porta))
     s.close()
 
-
-if sys.argv[1] == "-h":
-    print("+| USAGE: python3 carambola.py")
-elif sys.argv[1] == "-easter":
-    print("Hello Fsociety!")
-else:
-    pass
-       
 print()
 a = input('Entre com a URL: ')
 a = a.lower()
