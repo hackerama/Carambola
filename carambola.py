@@ -1,6 +1,5 @@
 #/usr/bin/env python3
 import subprocess
-import time
 import requests
 import socket
 import sys
@@ -32,7 +31,8 @@ def scan(porta):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     result = sock.connect_ex((ip, porta))
     if result == 0:
-        print ("Porta {}: 	 Aberta".format(porta))
+        print("Porta {}: 	 Aberta".format(porta))
+
     s.close()
 
 print()
@@ -127,7 +127,7 @@ try:
     if not sai:
         print("Parece que o Whois não retornou resultados...")
     else:
-        print(sai)
+        print('\033[35m' + sai +'\033[0;0m')
 except UnicodeDecodeError:
     print ("\nHouve um erro de unicode/decode")
 #print (str)
@@ -138,7 +138,7 @@ subprocess.call('cls', shell=True)
 
 print()
 print(("+")+(("-")*65)+("+"))
-print("|"+'\033[36m'+"dbqpdbqpd"+ '\033[0;0m'+"[ RODANDO SCANNER DE PORTAS, AGUARDE UM POUCO ]"+'\033[36m'+"qdbqpdbdb"+'\033[0;0m'+"|")
+print("|"+'\033[36m'+"dbqpdbqpd"+ '\033[0;0m'+"[ RODANDO SCANNER DE PORTAS, AGUARDE UM POUCO ]"+'\033[36m'+"qdbqpdbqp"+'\033[0;0m'+"|")
 print(("+")+(("-")*65)+("+"))
 print()
 
