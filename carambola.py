@@ -31,8 +31,7 @@ def scan(porta):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     result = sock.connect_ex((ip, porta))
     if result == 0:
-        print("Porta {}: 	 Aberta".format(porta))
-
+        print("+| Porta {}:                     	            Aberta".format(porta))
     s.close()
 
 print()
@@ -43,20 +42,20 @@ print(("+")+(("-")*65)+("+"))
 print("|"+'\033[36m'+"dbqpdbqpdbqpdbqpdbqpdb"+ '\033[0;0m'+"[  ALGUÉM VIVO AÍ!? ]"+'\033[36m'+"qpdbqpdbqpdbqpdbqpdbqp" + '\033[0;0m'+"|")
 print(("+")+(("-")*65)+("+"))
 print()
-try:
 
+try:
     r = requests.get(convert(a))
     headers = r.headers #debug
     srv = (r.headers['Server'])
     print('\033[33m'+"+| SERVER: "+'\033[0;0m', srv)
 except socket.gaierror:
-    print ("Que porra é essa que você digitou? Não consegui conectar")
+    print ("Ohh Shit! Não foi possível conectar!")
 except KeyError:
     print('\033[33m'+"+| SERVER: Não foi possível identificar o servidor."+'\033[0;0m')
 except requests.exceptions.MissingSchema:
-    print("Errado")
+    print("+| Algo errado aconteceu! Você digitou o endereço corretamente?")
 except requests.exceptions.ConnectionError:
-    print ("Que porra é essa que voce digitou?")
+    print ("+| Erro: O que é isso que você digitou? Não conseguimos conectar!")
     sys.exit(1)
 
 try:
@@ -65,12 +64,9 @@ try:
     print('\033[33m'+'+| POWERED BY:'+'\033[0;0m', pwr)
     if pwr == ("ASP.NET"):
         aspversion =  (r.headers['X-AspNet-Version'])
-        print ('\033[33m'+"+| ASP.NET VERSION:"+'\033[0;0m', aspversion)
-
+        print ('\033[33m'+"+| VERSÃO ASP.NET:"+'\033[0;0m', aspversion)
 except KeyError:
     pass
-
-
 
 stslst = [404, '[Não Encontrado]', 200, '[0k]', 401, '[Não Autorizado]', 403, '[Proibido]']
 
@@ -80,14 +76,11 @@ if r.status_code in stslst:
 else:
     print('\033[33m'+'+| STATUS HTTP: INDEFINIDO'+'\033[0;0m')
 
+
 a = convert(a)[len('http://'):]
-
-#print("resultado de a", a)
-
 try:
     ip = (socket.gethostbyname(a.lower()))
     print('\033[33m'+"+| IP:"+'\033[0;0m', ip)
-
 except socket.gaierror:
     print('\033[33m'+"+| IP: não foi possível obter o IP"+'\033[0;0m')
     sys.exit(0)
@@ -102,7 +95,7 @@ print()
 print(("+")+(("-")*65)+("+"))
 print("|"+'\033[36m'+"dbqpdbqpdbqpdbqpdbqpb"+ '\033[0;0m'+"[  RESULTADO DO WHOIS ]"+'\033[36m'+"pdbqpdbqpdbqpdbqpdbqp" + '\033[0;0m' + "|")
 print(("+")+(("-")*65)+("+"))
-print()
+#print()
 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -117,7 +110,7 @@ while True:
         break
 s.close()
 
-#convert bytes to string
+#Converte bytes em string
 try:
     out = (response.decode())
     str0 = (out.find('domain', 0))
@@ -125,16 +118,14 @@ try:
     print()
     sai = (out[(str0):(str)])
     if not sai:
-        print("Parece que o Whois não retornou resultados...")
+        print("""+| Parece que o Whois não retornou resultados... Atualmente 
+   o Carambola está retornando apenas resultados para sites 
+   com domínio ".br". Você ainda pode tentar rodar o Whois 
+   tradicional no seu Terminal.""")
     else:
-        print('\033[35m' + sai +'\033[0;0m')
+        print('\033[34m' + sai +'\033[0;0m')
 except UnicodeDecodeError:
-    print ("\nHouve um erro de unicode/decode")
-#print (str)
-
-
-# Limpa a tela.
-subprocess.call('cls', shell=True)
+    print ("+| Ops! Parece que houve um erro de unicode/decode")
 
 print()
 print(("+")+(("-")*65)+("+"))
@@ -166,4 +157,4 @@ except socket.error:
 
 t2 = time.time()
 total = t2 - t1
-print ('\nEscaneamento completo em %.2f segundos' % total)
+print('\033[1m'+'\033[33m'+'\n+| Belaza! Escaneamento completo em %.2f segundos' % total, '\033[0;0m')
