@@ -1,3 +1,4 @@
+#/usr/bin/env python3
 import subprocess
 import time
 import requests
@@ -106,12 +107,9 @@ print()
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("whois.registro.br", 43))
-
-#convert string to bytes, socket need bytes
 s.send((a).encode())
-
-#declares a bytes
 response = b""
+
 while True:
     data = s.recv(4096)
     response += data
@@ -166,11 +164,6 @@ except socket.error:
     print ("Nao foi possível conectar com o servidor")
     sys.exit()
 
-# Checking the time again
 t2 = time.time()
-
-# Calculates the difference of time, to see how long it took to run the script
 total = t2 - t1
-
-# Printing the information to screen
 print ('\nEscaneamento completo em %.2f segundos' % total)
