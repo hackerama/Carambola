@@ -42,9 +42,11 @@ def scan(porta):
 
 if sys.argv[1] == "-h":
     print("+| USAGE: python3 carambola.py")
-if sys.argv[1] == "-easter":
+elif sys.argv[1] == "-easter":
     print("Hello Fsociety!")
-    
+else:
+    pass
+       
 print()
 a = input('Entre com a URL: ')
 a = a.lower()
