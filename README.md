@@ -12,7 +12,7 @@ além de rodar um scanner simples de porta.
 
 # Help-me :o
 
-Condribua com minhas pesquisas! plz, me ajude a tornar este código mais rápido e eficinte. Tks!
+Contribua com minhas pesquisas! plz, me ajude a tornar este código mais rápido e eficinte. Tks!
 
 desenvolvido por _carlosnericorreia_ 
 Email: hackerama@protonmail.com
