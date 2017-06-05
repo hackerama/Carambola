@@ -4,15 +4,15 @@ Um _Fingerprint Scanner_ com foco em rapidez e praticidade. Capturando informaç
 públicas sensíveis de um site, como Servidor, IP, Versões de Aplicações, Whois,
 além de rodar um scanner simples de portas.
 
-# Para rodar: 
+<h3>Para rodar:</h3>
 	
 	$ chmod +777 carambola.py
   	$ carambola.py -h   # para ajuda
   	$ python3 carambola.py
 
-# Help-me :o
+<h3>Help-me :o</h3>
 
 Contribua com minha pesquisa! plz, me ajude a tornar este código mais rápido e eficinte. Tks!
 
-desenvolvido por _carlosnericorreia_
+desenvolvido por _carlosnericorreia_<br>
 email: hackerama@protonmail.com
