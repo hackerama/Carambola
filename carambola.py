@@ -10,14 +10,15 @@ import sys
 import threading
 import time
 
-if sys.argv[1] == "-h":
-    print("+| USAGE: python3 carambola.py")
-    sys.exit(0)
-elif sys.argv[1] == "-easter":
-    print("Hello Fsociety!")
-    sys.exit(0)
-else:
-    pass
+if len(sys.argv) > 1:
+    if sys.argv[1] == "-h":
+        print("\n+| USAGE: python3 carambola.py\n")
+        sys.exit(0)
+    if sys.argv[1] == "-easter":
+        print("\nHello Fsociety!\n")
+        sys.exit(0)
+    else:
+        pass
 
 print('\033[1m' + '\033[33m' + """
                            _hackerama_  '||            '||`         
@@ -29,7 +30,7 @@ print('\033[1m' + '\033[33m' + """
 print(' ' * 31 + 'v1.0')
 print('\033[31m' + (' ' * 21) + 'Fast Fingerprint Scanner' + '\033[0;0m')
 
-
+#definindo algumas funções.
 def convert(x):
     if x.startswith('www.'):
         return 'http://' + x
@@ -40,7 +41,6 @@ def convert(x):
     elif not x.startswith('www'):
         return 'http://www.' + x
 
-
 def scan(porta):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     result = sock.connect_ex((ip, porta))
@@ -48,6 +48,7 @@ def scan(porta):
         print("+| Porta {}:                         	                    Aberta".format(porta))
     s.close()
 
+#começando a main thread.
 print()
 a = input('Entre com a URL: ')
 a = a.lower()
@@ -58,6 +59,7 @@ print(
 print("+" + ("-" * 65) + "+")
 print()
 
+#capturando banners.
 try:
     r = requests.get(convert(a))
     headers = r.headers  # debug
@@ -91,6 +93,7 @@ if r.status_code in stslst:
 else:
     print('\033[33m' + '+| STATUS HTTP: INDEFINIDO' + '\033[0;0m')
 
+#criando sockets para resolver o host.
 a = convert(a)[len('http://'):]
 try:
     ip = (socket.gethostbyname(a.lower()))
@@ -105,6 +108,7 @@ try:
 except socket.herror:
     print('\033[33m' + "+| DNS: Não foi possível resolver o DNS" + '\033[0;0m')
 
+#rodando o whois
 print()
 print("+"+("-"*65)+"+")
 print(
@@ -123,6 +127,7 @@ while True:
         break
 s.close()
 
+#trabalhando a saída.
 try:
     out = (response.decode())
     str0 = (out.find('domain', 0))
@@ -146,6 +151,7 @@ print(
 print("+"+("-" * 65)+"+")
 print()
 
+#começando o portscanner
 t1 = time.time()
 try:
     for porta in range(1, 1025):
