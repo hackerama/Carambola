@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # Desenvolvedor: _carlosnericorreia_
 # email: hackerama@protonmail.com
-# Carambola Fast Fingerprint Scanner
+# Carambola Fast Fingerprint Scanner v1.0
 # Contribua com este projeto: https://github.com/hackerama/Carambola
 # Apenas para fins educacionais. Não nos responsabilizamos pelo uso indevido.
 
