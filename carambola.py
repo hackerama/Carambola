@@ -15,7 +15,7 @@ if len(sys.argv) > 1:
         print("\n+| USAGE: python3 carambola.py\n")
         sys.exit(0)
     if sys.argv[1] == "-easter":
-        print("\nHello Fsociety!\n")
+        print("\n+| Hello Fsociety!\n")
         sys.exit(0)
     else:
         pass
@@ -142,7 +142,7 @@ try:
     else:
         print('\033[34m' + sai + '\033[0;0m')
 except UnicodeDecodeError:
-    print("+| Ops! Parece que houve um erro de unicode/decode.")
+    print("\n+| Ops! Parece que houve um erro de unicode/decode.")
 
 print()
 print("+"+("-" * 65)+"+")
