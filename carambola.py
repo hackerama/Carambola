@@ -3,6 +3,7 @@
 # email: hackerama@protonmail.com
 # Carambola Fast Fingerprint Scanner
 # Contribua com este projeto: https://github.com/hackerama/Carambola
+# Apenas para fins educacionais. Não nos responsabilizamos pelo uso indevido.
 
 import requests
 import socket
