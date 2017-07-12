@@ -177,4 +177,4 @@ except socket.error:
 
 t2 = time.time()
 total = t2 - t1
-print('\033[1m' + '\033[33m' + '\n+| Belaza! Escaneamento completo em %.2f segundos' % total, '\033[0;0m')
+print('\033[1m' + '\033[33m' + '\n+| Beleza! Escaneamento completo em %.2f segundos' % total, '\033[0;0m')
